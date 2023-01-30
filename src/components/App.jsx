@@ -3,6 +3,7 @@ import { Statistics } from './Statistics/Statistics';
 
 import user from '../user.json';
 import data from '../data.json';
+console.log(data);
 
 export const App = () => {
   // console.log(user);
@@ -11,6 +12,7 @@ export const App = () => {
       style={{
         height: '100vh',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
@@ -25,6 +27,7 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
+      <Statistics title="Upload stats" stats={data} />
     </div>
   );
 };
