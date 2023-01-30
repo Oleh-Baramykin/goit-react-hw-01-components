@@ -1,33 +1,44 @@
 // import ProfileItem from './сomponets/Profile.styled';
 //
 import PropTypes from 'prop-types';
-import { ProfileItem } from './Profile.styled';
-import { Description } from './Description.styled';
+
+import {
+  Description,
+  ProfileItem,
+  Name,
+  Tag,
+  Location,
+  Img,
+  Stats,
+  StatsItem,
+  SpanLabel,
+  SpanQuantity,
+} from './Profile.styled';
 
 export const Profile = ({ avatar, username, tag, location, stats }) => {
   return (
     <ProfileItem>
       <Description>
-        <img src={avatar} alt="User avatar" className="avatar" width="300" />
-        <p className="name">{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
+        <Img src={avatar} alt="User avatar" width="150" />
+        <Name>{username}</Name>
+        <Tag>@{tag}</Tag>
+        <Location>{location}</Location>
       </Description>
 
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{stats.followers}</span>
-        </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{stats.views}</span>
-        </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{stats.likes}</span>
-        </li>
-      </ul>
+      <Stats>
+        <StatsItem>
+          <SpanLabel>Followers</SpanLabel>
+          <SpanQuantity>{stats.followers}</SpanQuantity>
+        </StatsItem>
+        <StatsItem>
+          <SpanLabel>Views</SpanLabel>
+          <SpanQuantity>{stats.views}</SpanQuantity>
+        </StatsItem>
+        <StatsItem>
+          <SpanLabel>Likes</SpanLabel>
+          <SpanQuantity>{stats.likes}</SpanQuantity>
+        </StatsItem>
+      </Stats>
     </ProfileItem>
   );
 };
