@@ -1,5 +1,3 @@
-// import ProfileItem from './сomponets/Profile.styled';
-//
 import PropTypes from 'prop-types';
 
 import {

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Cards, Docs, DocsValue, Text, CardsItem } from './Statistics.styled';
 
 export const Statistics = ({ stats, title }) => {
-  //   <div>{title}</div>;
   return (
     <div>
       <Text>{title}</Text>
