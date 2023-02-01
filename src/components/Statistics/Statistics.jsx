@@ -5,7 +5,7 @@ import { Cards, Docs, DocsValue, Text, CardsItem } from './Statistics.styled';
 export const Statistics = ({ stats, title }) => {
   return (
     <div>
-      <Text>{title}</Text>
+      {title && <Text>{title}</Text>}
       <CardsItem>
         {stats.map(({ id, label, percentage }) => (
           <Cards key={id} label={label}>
