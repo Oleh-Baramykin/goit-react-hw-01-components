@@ -3,13 +3,12 @@ import { Statistics } from './Statistics/Statistics';
 import { FriendList } from './FriendList/FriendList';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
-import friends from '../friends.json';
-import user from '../user.json';
-import data from '../data.json';
-import transactions from '../transactions';
+import friends from 'data/friends.json';
+import user from 'data/user.json';
+import data from 'data/data.json';
+import transactions from 'data/transactions';
 
 export const App = () => {
-  // console.log(user);
   return (
     <div
       style={{
@@ -21,7 +20,6 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      {/* React homework template */}
       <Profile
         username={user.username}
         tag={user.tag}

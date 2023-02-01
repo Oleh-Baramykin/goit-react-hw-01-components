@@ -7,20 +7,18 @@ import {
   FriendName,
 } from './FriendListItem.styled';
 
-export const FriendListItem = friends => {
+export const FriendListItem = ({ avatar, name, isOnline }) => {
   return (
     <FriendListItemStyle>
-      <FriendStatus status={friends.isOnline}></FriendStatus>
-      <FriendImage src={friends.avatar} alt="User avatar" width="48" />
-      <FriendName>{friends.name}</FriendName>
+      <FriendStatus status={isOnline}></FriendStatus>
+      <FriendImage src={avatar} alt="User avatar" width="48" />
+      <FriendName>{name}</FriendName>
     </FriendListItemStyle>
   );
 };
 
 FriendListItem.propTypes = {
-  friend: PropTypes.shape({
-    avatar: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    isOnline: PropTypes.bool.isRequired,
-  }),
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
 };

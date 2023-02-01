@@ -7,25 +7,27 @@ import { FriendListStyle } from './FriendList.styled';
 export const FriendList = ({ friends }) => {
   return (
     <FriendListStyle>
-      {friends.map(friends => (
-        <FriendListItem
-          key={friends.id}
-          name={friends.name}
-          avatar={friends.avatar}
-          status={friends.isOnline}
-        />
-      ))}
+      {friends.map(({ avatar, name, isOnline, id }) => {
+        return (
+          <FriendListItem
+            key={id}
+            avatar={avatar}
+            name={name}
+            isOnline={isOnline}
+          />
+        );
+      })}
     </FriendListStyle>
   );
 };
 
 FriendList.propTypes = {
   friends: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
+    PropTypes.exact({
       avatar: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      isOnline: PropTypes.bool,
+      isOnline: PropTypes.bool.isRequired,
+      id: PropTypes.number.isRequired,
     })
   ),
 };
